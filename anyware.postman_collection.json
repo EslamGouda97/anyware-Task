@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "8cf80a51-8208-4fe4-acd4-79b3b18c865f",
+		"name": "anyware",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27176597",
+		"_collection_link": "https://blue-robot-586048.postman.co/workspace/Auth~479b6c47-b93e-4ee0-a222-974c4f6f4ead/collection/27176597-8cf80a51-8208-4fe4-acd4-79b3b18c865f?action=share&source=collection_link&creator=27176597"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Eslam Emam\",\r\n    \"email\":\"eslam@test.com\",\r\n    \"password\":\"eslam123\",\r\n    \"confirmPassword\":\"eslam123\",\r\n    \"age\":27\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/signUp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"eslam2@test.com\",\r\n    \"password\":\"eslam321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/signIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "quizzes",
+			"item": [
+				{
+					"name": "get quizzes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTNiNTIwOWY2MTAwNTkzOGRhNzBhZjMiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2OTg0MTM2OTgsImV4cCI6MTY5ODQyMDg5OH0.u8AO4LCvkanhoFjkViQFaL5Y4oT35dn0Q4sHqKfOH8g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://any-ware-backend-awhf.vercel.app/quizzes",
+							"protocol": "https",
+							"host": [
+								"any-ware-backend-awhf",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"quizzes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create quiz",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGI2ZGViMDM2NjcyM2NkY2RiY2I1MzciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODk4NzM1NDEsImV4cCI6MTY4OTg4MDc0MX0.ImGNzU-PIIGNNUjaWH-9r0TTTKyARYm43IDaYF9DA3E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Your Quiz Title 2\",\r\n  \"questions\": [\r\n    {\r\n      \"questionText\": \"Question 4\",\r\n      \"options\": [\"Option 1\", \"Option 2\", \"Option 3\"],\r\n      \"correctAnswer\": \"Option 2\"\r\n    },\r\n    {\r\n      \"questionText\": \"Question 6\",\r\n      \"options\": [\"Option A\", \"Option B\", \"Option C\"],\r\n      \"correctAnswer\": \"Option C\"\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://any-ware-backend-awhf.vercel.app/quizzes",
+							"protocol": "https",
+							"host": [
+								"any-ware-backend-awhf",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"quizzes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete quiz",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGI2ZGViMDM2NjcyM2NkY2RiY2I1MzciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODk3MTI4MzIsImV4cCI6MTY4OTcyMDAzMn0.R8q1NMCx5TclGk8Kj2iXpuVuElVkQ3_jZH3Phw0tjcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://any-ware-backend-awhf.vercel.app/quizzes/653b510c076dada1ca3625d1",
+							"protocol": "https",
+							"host": [
+								"any-ware-backend-awhf",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"quizzes",
+								"653b510c076dada1ca3625d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update quiz",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "announcements",
+			"item": [
+				{
+					"name": "get announcements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGI2ZGViMDM2NjcyM2NkY2RiY2I1MzciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODk4MTAxMjIsImV4cCI6MTY4OTgxNzMyMn0.h_hw_1PvnAdWc4IErizsS0VdG6U_d7pJ-iwtf6ega1w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/quizzes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quizzes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create announcements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTNiNTIwOWY2MTAwNTkzOGRhNzBhZjMiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2OTg0MTM2OTgsImV4cCI6MTY5ODQyMDg5OH0.u8AO4LCvkanhoFjkViQFaL5Y4oT35dn0Q4sHqKfOH8g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "publisherName",
+									"value": "Eslam Emam",
+									"type": "text"
+								},
+								{
+									"key": "publisherDepartment",
+									"value": "English",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "LoLorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate sunt,, consectetur adipisicing elit. Voluptate sunt,",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/eslam/OneDrive/سطح المكتب/developer-activity-concept-illustration_114360-1643.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://any-ware-backend-awhf.vercel.app/announcements",
+							"protocol": "https",
+							"host": [
+								"any-ware-backend-awhf",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"announcements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete announcements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTNiNTIwOWY2MTAwNTkzOGRhNzBhZjMiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2OTg0MTM2OTgsImV4cCI6MTY5ODQyMDg5OH0.u8AO4LCvkanhoFjkViQFaL5Y4oT35dn0Q4sHqKfOH8g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://any-ware-backend-awhf.vercel.app/announcements/653bc0f257f5c414bd11079a",
+							"protocol": "https",
+							"host": [
+								"any-ware-backend-awhf",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"announcements",
+								"653bc0f257f5c414bd11079a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update announcements",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://any-ware-backend-awhf.vercel.app/announcements/653b67df52b33bf3eb9b567f",
+							"protocol": "https",
+							"host": [
+								"any-ware-backend-awhf",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"announcements",
+								"653b67df52b33bf3eb9b567f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGI3ZWI0MGY4Y2RhZWVjYzUxZWU5YjUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODk3NzUwNzQsImV4cCI6MTY4OTc4MjI3NH0.6k95rnFg-jhsCJBhuWbS9NekJ56Wk2fUR0Ng7a_OA1Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://any-ware-backend-awhf.vercel.app/users",
+							"protocol": "https",
+							"host": [
+								"any-ware-backend-awhf",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTNiNTIwOWY2MTAwNTkzOGRhNzBhZjMiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2OTgzOTE2MTksImV4cCI6MTY5ODM5ODgxOX0.U14-PldOAXrLkvdFrvXqLj8oAmkqLl2LUujZFn-cRRU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"eslam ai\",\r\n    \"email\":\"eslam@dfdsf\",\r\n    \"password\":11545245451,\r\n    \"age\":26\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://any-ware-backend-awhf.vercel.app/users/653b5209f61005938da70af3",
+							"protocol": "https",
+							"host": [
+								"any-ware-backend-awhf",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"users",
+								"653b5209f61005938da70af3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"userName\":\"Eslam Gouda\",\r\n    \"age\":27\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/64b038983aac2fe50f1531e0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"64b038983aac2fe50f1531e0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGI2ZGViMDM2NjcyM2NkY2RiY2I1MzciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODk4MDgzNDMsImV4cCI6MTY4OTgxNTU0M30.HvcMiOtDu-sJ2suufc1F6rCuRt71qVWxNTfPCahJw8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDhkYWI3MjM4MTJlN2IzYjc0NWJlNDYiLCJmaXJzdE5hbWUiOiJFc2xhbSBHb3VkYSAiLCJsYXN0TmFtZSI6IkVtYW0gIiwiZnVsbE5hbWUiOiJFc2xhbSBFbWFtICIsImVtYWlsIjoiZXNsYW1AdGVzdC5jb20iLCJpbWFnZSI6eyJ1cmwiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kczJ1cXB3YzIvaW1hZ2UvdXBsb2FkL3YxNjg5MzU3MDM2L3VzZXJzL3lrNG9nZzZqbnV2bjM2NXBhcW11LnBuZyIsInB1YmxpY0lkIjoieWs0b2dnNmpudXZuMzY1cGFxbXUifSwiaXNBZG1pbiI6dHJ1ZSwiYWRkcmVzcyI6eyJjb3VudHJ5IjoiRWd5cHQiLCJjaXR5IjoidGFudGEifSwiZmF2b3VyaXRlcyI6W10sInJlbnRlZEFwYXJ0bWVudHMiOltdLCJjcmVhdGVkQXQiOiIyMDIzLTA2LTE3VDEyOjQ3OjQ2LjA5OFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTA3LTE0VDE4OjE0OjAwLjM5NFoiLCJfX3YiOjAsImlhdCI6MTY4OTM3NDQwNSwiZXhwIjoxNjg5NDYwODA1fQ.aEk9Vo2YNhrGLGf-rJoZXzqaw1pYboss0_4Yb9LM5a4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/notifications/648dab723812e7b3b745be46",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"notifications",
+								"648dab723812e7b3b745be46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile image",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000//user/image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"",
+								"user",
+								"image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
