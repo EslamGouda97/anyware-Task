@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Anyware = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: "https://any-ware-backend-awhf.vercel.app/",
 });
 
 Anyware.interceptors.request.use(
