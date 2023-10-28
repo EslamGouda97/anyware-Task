@@ -8,4 +8,5 @@ password:eslam123
 5-I also made slices for each user and quizzes but there is no ui to display the data from backend.
 6-I exported the postman file so u can test the backend within it. 
 7-this is the url of the backend at vercel hosting (https://any-ware-backend-awhf.vercel.app/)
-----I am so sorry for the bad responsive i am so busy so i focused at backend firstly,forgive me.------
+----I am so sorry for the bad responsive , I focused at backend firstly------
+Forgive me if there are mistakes in my design of the Front End, especially the Responsive one, due to time constraints due to personal circumstances.
