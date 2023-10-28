@@ -1,9 +1,16 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import image from "../../assets/3426526-removebg-preview.png";
+import { useEffect } from "react";
+import { fetchAnnouncement } from "../../store/Slices/announcementSlice";
+import { fetchQuizzes } from "../../store/Slices/quizzes";
 
 export default function Index() {
   const announcements = useSelector((state) => state.announcement?.announcement);
-  console.log(announcements);
+  const dispatch = useDispatch();
+  useEffect(() => {
+      dispatch(fetchAnnouncement());
+      dispatch(fetchQuizzes());
+  }, [dispatch]);
 
   return (
     <div className="bg-[#f3f3f3] h-full p-5">
